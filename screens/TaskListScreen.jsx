@@ -20,7 +20,18 @@ export default function TaskListScreen({ navigation }) {
   const totalTasks   = tasks.length;
   const pendingTasks = tasks.filter(t => !t.completed).length;
 
+
+  if (totalTasks===0){
   return (
+    <View style={styles.container}>
+      <Text style={styles.header}>
+        {appTitle} ({totalTasks})</Text>
+
+   
+    }
+
+
+
     <View style={styles.container}>
       <Text style={styles.header}>
         {appTitle} ({totalTasks})
@@ -54,3 +65,4 @@ const styles = StyleSheet.create({
   list:       { flex: 1, marginBottom: 12 },
   taskItem:   { fontSize: 14, paddingVertical: 4 },
 });
+ }
